@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Haven - Feedback</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header class="heading">
+        <h1>Brew Haven</h1>
+        <nav class="nav-bar">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="feedback-header">
+            <h2>Feedback</h2>
+            <p>Your thoughts help us serve better ☕</p>
+        </section>
+
+        <section class="feedback-container">
+            <div class="feedback-form">
+                <h3>Share Your Experience</h3>
+
+                <form onsubmit="event.preventDefault()">
+                    <input type="text" id="fname" placeholder="Your Name (optional)">
+
+                    <select id="frating" required>
+                        <option value="">Rate your experience</option>
+                        <option>Excellent</option>
+                        <option>Good</option>
+                        <option>Average</option>
+                        <option>Poor</option>
+                    </select>
+
+                    <textarea id="ffeedback" rows="5" placeholder="Your feedback" required></textarea>
+
+                    <button onclick="saveFeedback()">Save to File</button>
+                    <br><br>
+                    <input type="file" accept=".txt" onchange="loadFeedback(event)">
+                </form>
+            </div>
+        </section>
+
+        <script src="../js/feedback.js"></script>
+
+
+    </main>
+
+    <footer class="footer-home">
+        <p>© 2025 Brew Haven. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

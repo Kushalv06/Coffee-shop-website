@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Haven - Contact</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header class="heading">
+        <h1>Brew Haven</h1>
+        <nav class="nav-bar">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="contact-header">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you ☕</p>
+        </section>
+
+        <section class="contact-container">
+
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><strong>Address:</strong> Brew Haven, Bengaluru</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Email:</strong> brewhaven@gmail.com</p>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+
+                <form onsubmit="event.preventDefault()">
+                    <input type="text" id="cname" placeholder="Your Name" required>
+                    <input type="email" id="cemail" placeholder="Your Email" required>
+                    <textarea id="cmessage" rows="5" placeholder="Your Message" required></textarea>
+
+                    <button onclick="saveContact()">Save to File</button>
+                    <br><br>
+                    <input type="file" accept=".txt" onchange="loadContact(event)">
+                </form>
+            </div>
+        </section>
+
+        <script src="../js/contact.js"></script>
+
+    </main>
+
+    <footer class="footer-home">
+        <p>© 2025 Brew Haven. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
