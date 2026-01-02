@@ -63,10 +63,11 @@
                     <input type="email" id="cemail" placeholder="Your Email" required>
                     <textarea id="cmessage" rows="5" placeholder="Your Message" required></textarea>
 
-                    <button onclick="saveContact()">Save to File</button>
-                    <br><br>
-                    <input type="file" accept=".txt" onchange="loadContact(event)">
                 </form>
+
+                <div class="feedback-buttons">
+                    <button type="button" onclick="saveContact()">Save to File</button>
+                </div>
             </div>
         </section>
 

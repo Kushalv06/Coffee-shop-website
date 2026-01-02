@@ -70,11 +70,9 @@ function renderCart() {
 
         cartItemsContainer.appendChild(cartItem);
     }
-
-    totalPriceEl.textContent = `₹${totalPrice}`;
 }
-
 renderCart();
+
 
 
 // Plus Minus logic

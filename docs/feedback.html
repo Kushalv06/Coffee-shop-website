@@ -24,6 +24,18 @@
         font-size: 18px;
         color: #FFF8F0;
     }
+    .feedback-buttons {
+    display: flex;
+    gap: 15px;
+    }
+
+    #thankYouMsg {
+    display: none;
+    color: green;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+    }
 </style>
 <body>
 
@@ -40,17 +52,16 @@
 
     <main>
 
-        <section class="feedback-header">
-            <h2>Feedback</h2>
-            <p>Your thoughts help us serve better ☕</p>
-        </section>
-
         <section class="feedback-container">
             <div class="feedback-form">
                 <h3>Share Your Experience</h3>
 
                 <form onsubmit="event.preventDefault()">
-                    <input type="text" id="fname" placeholder="Your Name (optional)">
+                    <input type="text" id="fname" placeholder="Your Name">
+
+                    <input type="text" id="fphone" placeholder="Phone Number" required>
+
+                    <input type="email" id="femail" placeholder="Email Address" required>
 
                     <select id="frating" required>
                         <option value="">Rate your experience</option>
@@ -62,12 +73,14 @@
 
                     <textarea id="ffeedback" rows="5" placeholder="Your feedback" required></textarea>
 
-                    <button onclick="saveFeedback()">Save to File</button>
-                    <br><br>
-                    <input type="file" accept=".txt" onchange="loadFeedback(event)">
+                    <div class="feedback-buttons">
+                        <button type="button" onclick="saveFeedback()">Save to File</button>
+                    </div>
+
                 </form>
             </div>
         </section>
+
 
         <script src="../js/feedback.js"></script>
 

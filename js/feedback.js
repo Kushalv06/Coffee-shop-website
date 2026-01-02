@@ -1,10 +1,32 @@
 function saveFeedback() {
-    const name = document.getElementById("fname").value;
+    const name = document.getElementById("fname").value.trim();
+    const phone = document.getElementById("fphone").value.trim();
+    const email = document.getElementById("femail").value.trim();
     const rating = document.getElementById("frating").value;
-    const feedback = document.getElementById("ffeedback").value;
+    const feedback = document.getElementById("ffeedback").value.trim();
+
+    const phoneRegex = /^[6789][0-9]{9}$/;
+    const emailRegex = /^[\w.-]+@[\w.-]+\.com$/
+
+    if (!phoneRegex.test(phone)) {
+        alert("Phone number must be 10 digits and start with 6, 7, 8, or 9");
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email (example@gmail.com)");
+        return;
+    }
+
+    if (rating === "" || feedback === "") {
+        alert("Please fill all required fields");
+        return;
+    }
 
     const data =
 `Name: ${name}
+Phone: ${phone}
+Email: ${email}
 Rating: ${rating}
 Feedback: ${feedback}`;
 
@@ -15,17 +37,3 @@ Feedback: ${feedback}`;
     link.click();
 }
 
-function loadFeedback(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const lines = e.target.result.split("\n");
-
-        document.getElementById("fname").value = lines[0].split(": ")[1] || "";
-        document.getElementById("frating").value = lines[1].split(": ")[1] || "";
-        document.getElementById("ffeedback").value = lines[2].split(": ")[1] || "";
-    };
-    reader.readAsText(file);
-}
