@@ -37,3 +37,8 @@ Feedback: ${feedback}`;
     link.click();
 }
 
+function submitform(){
+    
+    alert("Thank u for ur response!");
+}
+

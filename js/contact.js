@@ -26,7 +26,7 @@ function saveContact() {
     const data =
     `Name: ${name}
     Email: ${email}
-    Phone: ${phone}
+    Phone: ${phone}   
     Message: ${message}`;
 
     const blob = new Blob([data], { type: "text/plain" });
