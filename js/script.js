@@ -70,6 +70,8 @@ function renderCart() {
 
         cartItemsContainer.appendChild(cartItem);
     }
+    console.log(totalPrice);
+    totalPriceEl.textContent = `₹${totalPrice}`;
 }
 renderCart();
 
